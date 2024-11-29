@@ -1,0 +1,472 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #141E30, #243B55);
+    color: white;
+}
+
+/* Enhanced Navigation Bar */
+nav {
+    background: #2C3E50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 10px;
+    position: fixed;
+    top: -100px;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+    transition: top 0.6s ease, background 0.3s ease;
+}
+
+nav.scrolled {
+    top: 0;
+    background: #34495E;
+}
+
+nav .logo {
+    margin-right: 30px;
+}
+
+nav .logo img {
+    height: 80px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+nav .logo img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ECF0F1;
+    font-size: 1.2em;
+    font-weight: bold;
+    position: relative;
+    padding: 10px 0;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: #00FFAB;
+    transition: width 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: #00FFAB;
+    transform: scale(1.1);
+}
+
+/* Smooth intro animation */
+@keyframes slideDown {
+    from {
+        top: -100px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+nav {
+    animation: slideDown 1.5s ease forwards;
+}
+
+/* Full-page background image styling */
+.full-page-image {
+    height: 110vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.full-page-image img.background-image {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensures the image fills the container */
+}
+
+header {
+    text-align: center;
+    padding: 100px;
+    background: #141E30;
+}
+
+header h1 {
+    font-size: 3em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #00FFAB;
+}
+
+header h2 {
+    font-size: 1.5em;
+    color: #EEEEEE;
+}
+
+/* Content Styles */
+.content {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+/* Island Styles */
+.island {
+    background: #243B55;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 20px rgba(0, 255, 171, 0.3);
+}
+
+.island p {
+    font-size: 1.2em;
+}
+
+/* Overview Section */
+h3 {
+    color: #00FFAB;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.overview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.overview-item {
+    background: #243B55;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 700px;
+    text-align: center;
+    box-shadow: 0px 0px 20px rgba(0, 255, 171, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.overview-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.overview-item h4 {
+    font-size: 1.8em;
+    color: #00FFAB;
+    margin-bottom: 10px;
+}
+
+.overview-item p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #EEEEEE;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background: #00FFAB;
+    color: #243B55;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background 0.3s ease, font-size 0.3s ease;
+}
+
+button:hover {
+    background: #00FFAB;
+    color: #141E30;
+    font-size: 1.2em;
+}
+
+/* Quiz Section */
+.quiz {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px; /* Add spacing between quiz and other content */
+}
+
+.quiz-question {
+    background: #243B55;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    width: 300px;
+    box-shadow: 0px 0px 20px rgba(0, 255, 171, 0.3);
+    position: relative;
+}
+
+.quiz-question h4 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: #00FFAB;
+}
+
+.quiz-question button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #00FFAB; /* Default button color */
+    color: #243B55;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+    margin-bottom: 10px;
+}
+
+.quiz-question button:hover {
+    background: #00FFAB;
+    color: #141E30;
+    transform: scale(1.1);
+}
+
+.quiz-question button.correct {
+    background: #28a745; /* Lighter green for correct answer */
+    color: white;
+}
+
+.quiz-question button.incorrect {
+    background: #dc3545; /* Red for incorrect answer */
+    color: white;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #141E30;
+    margin-top: 50px;
+    color: #EEEEEE;
+    font-size: 0.9em;
+}
+
+/* General Island Styling */
+.iframe-section {
+    text-align: center;
+    background-color: #243B55;
+    padding: 20px;
+    width: 70%; /* Increased width of islands */
+    margin: 0 auto;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0px 0px 20px rgba(0, 255, 171, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.iframe-section:hover {
+    transform: scale(1.05); /* Slight growth on hover */
+    box-shadow: 0px 0px 30px rgba(0, 255, 171, 0.7); /* Stronger glow on hover */
+}
+
+/* Centering */
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/* Preview and Iframe Container */
+.quiz-preview {
+    width: 80%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 255, 171, 0.2);
+}
+
+.quiz-iframe-container {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/* Quizizz Iframe in Landscape Mode */
+.quiz-iframe-container iframe {
+    width: 95%; /* Wider to fit landscape */
+    height: 450px; /* Landscape height */
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 0px 20px rgba(0, 255, 171, 0.3);
+}
+
+/* Scratch Iframe in Landscape Mode */
+.scratch-iframe-container iframe {
+    width: 95%;
+    height: 500px; /* Bigger Scratch iframe */
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 0px 20px rgba(0, 255, 171, 0.3);
+}
+
+/* Close Button on Iframe */
+.close-iframe-button {
+    position: absolute;
+    top: 5px; /* Moved inside iframe */
+    right: 5px; /* Moved inside iframe */
+    width: 30px;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.2s ease;
+}
+
+.close-iframe-button:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* Button Styling */
+.interactive-button {
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    padding: 5px; /* Added padding */
+}
+
+.play-now-button {
+    width: 80px; /* Slightly larger play button */
+}
+
+.interactive-button:hover {
+    transform: scale(1.1); /* Grow slightly on hover */
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px;
+}
+
+/* Quizizz and Scratch Logos */
+.quizizz-logo, .scratch-logo {
+    width: 40px;
+    cursor: pointer;
+}
+
+/* Hidden Preview Image */
+.quiz-preview.hidden {
+    display: none;
+}
+
+/* What's This Button */
+.whats-this-button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid rgba(0, 255, 171, 0.5);
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: block;
+}
+
+.whats-this-button:hover {
+    transform: scale(1.05);
+}
+
+/* PDF Island Styling */
+.pdf-island {
+    text-align: center;
+    background-color: #243B55;
+    padding: 20px;
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 255, 171, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pdf-island:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 30px rgba(0, 255, 171, 0.7);
+}
+
+/* PDF Preview Image */
+.pdf-preview {
+    width: 60%; /* Smaller preview size */
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 255, 171, 0.2);
+}
+
+/* PDF Download Button Styling */
+.pdf-download-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px; /* Adjust button size */
+    height: 60px;
+    padding: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.pdf-download-icon {
+    width: 100%;
+    height: auto;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+/* PDF What's This Button Styling */
+.pdf-whats-this-button {
+    background-color: transparent;
+    border: none;
+    color: #00ffab;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    margin-left: 10px;
+    padding: 5px 10px;
+}
+
+.pdf-whats-this-button:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
